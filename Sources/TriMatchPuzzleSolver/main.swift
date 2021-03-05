@@ -1,5 +1,4 @@
-import Cocoa
-
+import Foundation
 
 enum Turn:Int,CaseIterable
 {
@@ -74,7 +73,7 @@ struct Board
                                     15: 3,
                                     ]
 
-    func checkboard() -> Int
+    @discardableResult func checkboard() -> Int
     {
 //       print("checkboard:"+self.description)
 
@@ -84,23 +83,23 @@ struct Board
 
             switch position
             {
-                case 0: if row.begin != stone.colorA || row.end != stone.colorB { return position }
+                case 0: if row.begin != stone.colorA || row.end != stone.colorB                                     { return position }
 
-                case 1: if row.begin != stone.colorA { return position }
-                case 2: if stones[position-1].colorB != stone.colorB || stones[position-2].colorC != stone.colorC { return position }
-                case 3: if stones[position-1].colorA != stone.colorA || row.end != stone.colorB { return position }
+                case 1: if row.begin != stone.colorA                                                                { return position }
+                case 2: if stones[position-1].colorB != stone.colorB || stones[position-2].colorC != stone.colorC   { return position }
+                case 3: if stones[position-1].colorA != stone.colorA || row.end != stone.colorB                     { return position }
 
-                case 4: if row.begin != stone.colorA { return position }
-                case 5: if stones[position-1].colorB != stone.colorB || stones[position-4].colorC != stone.colorC { return position }
-                case 6: if stones[position-1].colorA != stone.colorA  { return position }
-                case 7: if stones[position-1].colorB != stone.colorB || stones[position-4].colorC != stone.colorC { return position }
-                case 8: if stones[position-1].colorA != stone.colorA  || row.end != stone.colorB { return position }
+                case 4: if row.begin != stone.colorA                                                                { return position }
+                case 5: if stones[position-1].colorB != stone.colorB || stones[position-4].colorC != stone.colorC   { return position }
+                case 6: if stones[position-1].colorA != stone.colorA                                                { return position }
+                case 7: if stones[position-1].colorB != stone.colorB  || stones[position-4].colorC != stone.colorC  { return position }
+                case 8: if stones[position-1].colorA != stone.colorA  || row.end != stone.colorB                    { return position }
 
-                case 9:  if row.begin != stone.colorA                 || row.bottom[0] != stone.colorC          { return position }
+                case 9:  if row.begin != stone.colorA                 || row.bottom[0] != stone.colorC              { return position }
                 case 10: if stones[position-1].colorB != stone.colorB || stones[position-6].colorC != stone.colorC  { return position }
-                case 11: if stones[position-1].colorA != stone.colorA || row.bottom[1] != stone.colorC          { return position }
+                case 11: if stones[position-1].colorA != stone.colorA || row.bottom[1] != stone.colorC              { return position }
                 case 12: if stones[position-1].colorB != stone.colorB || stones[position-6].colorC != stone.colorC  { return position }
-                case 13: if stones[position-1].colorA != stone.colorA || row.bottom[2] != stone.colorC          { return position }
+                case 13: if stones[position-1].colorA != stone.colorA || row.bottom[2] != stone.colorC              { return position }
                 case 14: if stones[position-1].colorB != stone.colorB || stones[position-6].colorC != stone.colorC  { return position }
                 case 15: if stones[position-1].colorA != stone.colorA || row.bottom[3] != stone.colorC || row.end != stone.colorB { return position }
 
@@ -144,7 +143,7 @@ func testremaining(given:[Stone], remaining originalRemaining:[Stone]) -> Int
                     print("solved: \( stones.description )")
                 }
 
-                testremaining(given: stones, remaining: remaining )
+                _ = testremaining(given: stones, remaining: remaining )
             }
         }
     }

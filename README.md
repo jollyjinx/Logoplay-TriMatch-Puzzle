@@ -4,5 +4,6 @@ Christmas I got a Logoplay trimatch puzzle. I was not able to solve it immediate
 
 Just written down without much thought about it. It works and spits out solutions after about a 10 ms on the commandline ( about a minute in Playground ).
 
-<img src="LogoplayTriMatchPuzzle.playground/Resources/PuzzlePicture.png" style="max-width: 50%; display: block; margin-left: auto; margin-right: auto;" /> 
+![Picture of Logoplay Trimatch Puzzle](Images/PuzzlePicture.png)
+
 
